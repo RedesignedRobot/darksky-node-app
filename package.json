@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/RedesignedRobot/darksky-node-app/issues"
   },
-  "homepage": "https://github.com/RedesignedRobot/darksky-node-app#readme"
+  "homepage": "https://github.com/RedesignedRobot/darksky-node-app#readme",
+  "dependencies": {
+    "chalk": "2.4.2",
+    "request": "2.88.0"
+  }
 }
