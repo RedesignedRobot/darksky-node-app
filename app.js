@@ -1,13 +1,12 @@
 const r = require("request");
-const cities = require("all-the-cities");
 const u = require("./utils");
+const readline = require("readline-sync");
 
-const dubai = cities.filter(city => {
-  return city.name.match("Dubai");
-});
+const cityName = readline.question("City name: ");
 
-const url = u.createURL(dubai[0]);
+const url = u.createURL(u.citySearch(String(cityName)));
 
 r({ url: url, json: true }, (e, r, b) => {
-  console.log(b.currently.temperature);
+  // console.log(b.currently.temperature);
+  console.table(b.currently);
 });
