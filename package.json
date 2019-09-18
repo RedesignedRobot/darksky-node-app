@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/RedesignedRobot/darksky-node-app#readme",
   "dependencies": {
+    "all-the-cities": "2.0.1",
     "chalk": "2.4.2",
     "request": "2.88.0"
   }
