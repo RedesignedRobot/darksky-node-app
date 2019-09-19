@@ -41,10 +41,9 @@ function forecast(city, callback) {
 }
 
 function createURL(city) {
+  const { lat, lon } = city;
   const baseURL =
     "https://api.darksky.net/forecast/e6a1c6141f4df0dfe90bc44355d277a6/";
-  const lat = city.lat;
-  const lon = city.lon;
   const options = "?units=si&lang=en";
   const finalURL = baseURL + lat + "," + lon + options;
   return finalURL;
@@ -62,9 +61,10 @@ function citySearch(cityName) {
   resultSet.sort((a, b) => (a.population > b.population ? -1 : 1));
   if (resultSet.length !== 0) {
     const resultCity = resultSet[0];
-    data.lat = resultCity.lat;
-    data.lon = resultCity.lon;
-    data.name = resultCity.name;
+    const { lat, lon, name } = resultCity;
+    data.lat = lat;
+    data.lon = lon;
+    data.name = name;
   }
   return data;
 }
